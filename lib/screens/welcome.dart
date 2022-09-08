@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
+import 'package:vee/screens/play1.dart';
 import 'package:vee/screens/login.dart';
+import 'package:vee/screens/play.dart';
 import '../widgets/clickbutton.dart';
 import 'Register.dart';
 
@@ -37,6 +40,32 @@ class Welcome extends StatelessWidget {
                     Navigator.pushNamed(context, Register.id);
                   },
                 ),
+                clickbutton(
+                    color: Colors.green,
+                    text: 'play',
+                    textcolor: Colors.white,
+                    fun: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: ((context) => Play())));
+                    }),
+                clickbutton(
+                    color: Colors.green,
+                    text: 'play1',
+                    textcolor: Colors.white,
+                    fun: () async {
+                      WidgetsFlutterBinding.ensureInitialized();
+
+                      final cameras = await availableCameras();
+
+                      final firstCamera = cameras.first;
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => Play1(
+                                    firstCamera: firstCamera,
+                                    cameras: cameras,
+                                  ))));
+                    })
               ]),
         ),
       ),
