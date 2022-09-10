@@ -44,6 +44,7 @@ dependencies:
   camera: ^0.10.0+1
   path_provider: ^2.0.11 
   date_format: ^2.0.6
+  flutter_cache_manager: ^3.3.0
 
 dev_dependencies:
   flutter_test:

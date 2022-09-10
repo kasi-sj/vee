@@ -4,6 +4,7 @@ import 'package:vee/screens/play1.dart';
 import 'package:vee/screens/login.dart';
 import 'package:vee/screens/play.dart';
 import '../widgets/clickbutton.dart';
+import 'package:vee/screens/press';
 import 'Register.dart';
 
 class Welcome extends StatelessWidget {
@@ -65,7 +66,29 @@ class Welcome extends StatelessWidget {
                                     firstCamera: firstCamera,
                                     cameras: cameras,
                                   ))));
-                    })
+                    }),
+                clickbutton(
+                    color: Colors.green,
+                    text: 'press1',
+                    textcolor: Colors.white,
+                    fun: () async {
+                      WidgetsFlutterBinding.ensureInitialized();
+
+                      final cameras = await availableCameras();
+
+                      final firstCamera = cameras.firstWhere(
+                          (CameraDescription) =>
+                              CameraDescription.lensDirection ==
+                              CameraLensDirection.front);
+
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => Press1(
+                                    firstCamera: firstCamera,
+                                    cameras: cameras,
+                                  ))));
+                    }),
               ]),
         ),
       ),
