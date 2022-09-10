@@ -4,7 +4,7 @@ import 'package:vee/screens/play1.dart';
 import 'package:vee/screens/login.dart';
 import 'package:vee/screens/play.dart';
 import '../widgets/clickbutton.dart';
-import 'package:vee/screens/press';
+import 'package:vee/screens/press.dart';
 import 'Register.dart';
 
 class Welcome extends StatelessWidget {

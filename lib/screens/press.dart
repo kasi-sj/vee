@@ -40,8 +40,6 @@ class TakePictureScreen extends StatefulWidget {
 }
 
 class TakePictureScreenState extends State<TakePictureScreen> {
-  
-
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
 
@@ -87,7 +85,6 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             final image = await _controller.takePicture();
 
             if (!mounted) return;
- 
 
             await Navigator.of(context).push(
               MaterialPageRoute(builder: (context) {
