@@ -119,7 +119,7 @@ class _ChatState extends State<Chat> {
                         controller: textfielder,
                       ),
                     ),
-                    FlatButton(
+                    TextButton(
                       onPressed: () {
                         setState(() {
                           textfielder.clear();
